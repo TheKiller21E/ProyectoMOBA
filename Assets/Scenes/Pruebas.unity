@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 963194230}
   - component: {fileID: 963194232}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194233}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -580,6 +581,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomspeed: 20
+--- !u!114 &963194233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ed4664157fe564c8e07de7a826adce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedhero: {fileID: 0}
 --- !u!1 &1108857712
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +720,7 @@ GameObject:
   - component: {fileID: 1135617940}
   m_Layer: 31
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1296,9 +1310,10 @@ GameObject:
   - component: {fileID: 1423483185292034744}
   - component: {fileID: 1423483185292034742}
   - component: {fileID: 1423483185292034740}
+  - component: {fileID: 1423483185292034746}
   m_Layer: 0
   m_Name: DogPolyart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1315,7 +1330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27bc1ca17161454c968d242f9c5f68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jugador: {fileID: 1423483185292034744}
   rotateSpeedmove: 0.075
+  rotatevelocity: 0
   Loock: {fileID: 9145633026330625156, guid: fdeb51d77ab17524da04e529a995a011, type: 3}
 --- !u!1 &1423483185292034741
 GameObject:
@@ -1399,6 +1416,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1423483185292034746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423483185292034739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11636510d87f0874b993e8482b50c4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TagetEnemy: {fileID: 0}
+  heroAttack: 0
+  attackranged: 0
+  rotatespeedattack: 0.075
+  alive: 0
+  performattack: 1
 --- !u!1 &1423483185292034747
 GameObject:
   m_ObjectHideFlags: 0
