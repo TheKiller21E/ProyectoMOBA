@@ -15,15 +15,19 @@ public class CombatHero : MonoBehaviour
     float rotatespeedattack = 0.075f;
 
     PlayerMovement2 movescript;
+    StatsPlayer statsscript;
+    Animator anim;
 
     bool atckidle = false;
     public bool alive;
     [SerializeField]
-    bool performattack = true;
+    public bool performattack = true;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         movescript = GetComponent<PlayerMovement2>();
+        statsscript = GetComponent<StatsPlayer>();
     }
 
     // Update is called once per frame
@@ -48,9 +52,42 @@ public class CombatHero : MonoBehaviour
                     if (performattack)
                     {
                         Debug.Log("ataque");
+
+                        //Rotacion
+                        Quaternion roationTolookAt = Quaternion.LookRotation(TagetEnemy.transform.position - transform.position);
+                        float rotatey = Mathf.SmoothDampAngle(transform.eulerAngles.y, roationTolookAt.eulerAngles.y, ref movescript.rotatevelocity, rotatespeedattack * (Time.deltaTime * 5));
+                        transform.eulerAngles = new Vector3(0, rotatey, 0);
+
+                        StartCoroutine(MeleeAtack());
                     }
                 }
             }
         }
+    }
+
+    IEnumerator MeleeAtack()
+    {
+        performattack = false;
+        anim.SetBool("BasicAtack",true);
+        yield return new WaitForSeconds(1f);
+
+        if (TagetEnemy==null)
+        {
+            anim.SetBool("BasicAtack", false);
+            performattack = true;
+        }
+    }
+
+    void attack()
+    {
+        if (TagetEnemy != null)
+        {
+            if (TagetEnemy.GetComponent<Targetable>().enemytype == Targetable.EnemyType.minion)
+            {
+                TagetEnemy.GetComponent<StatsPlayer>().Takedaño(statsscript.atackDmg);
+            }
+        }
+
+        performattack = true;
     }
 }
