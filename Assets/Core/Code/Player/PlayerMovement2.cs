@@ -36,7 +36,6 @@ public class PlayerMovement2 : MonoBehaviour
                     combatscript.TagetEnemy = null;
                 }
             }
-
         }
 
         if (Input.GetMouseButtonDown(1)) //boton izquierdo

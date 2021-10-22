@@ -19,7 +19,7 @@ public class CombatHero : MonoBehaviour
     Animator anim;
 
     bool atckidle = false;
-    public bool alive;
+    public bool alive =true;
     [SerializeField]
     public bool performattack = true;
 
@@ -33,6 +33,7 @@ public class CombatHero : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.LogWarning(anim.speed);
         if (TagetEnemy != null)
         {
             if (Vector3.Distance(gameObject.transform.position,TagetEnemy.transform.position)>attackranged)
@@ -63,18 +64,27 @@ public class CombatHero : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            anim.SetBool("BasicAtack", false);
+            performattack = true;
+            anim.speed = statsscript.Speed;
+        }
     }
 
     IEnumerator MeleeAtack()
     {
+        anim.speed = statsscript.atackSpeed;
         performattack = false;
         anim.SetBool("BasicAtack",true);
-        yield return new WaitForSeconds(1f);
+
+        yield return new WaitForSeconds(.6f);
 
         if (TagetEnemy==null)
         {
             anim.SetBool("BasicAtack", false);
             performattack = true;
+            anim.speed = statsscript.Speed;
         }
     }
 

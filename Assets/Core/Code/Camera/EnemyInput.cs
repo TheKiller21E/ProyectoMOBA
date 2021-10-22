@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyInput : MonoBehaviour
 {
     public GameObject selectedhero;
-    bool heroplayer;
+    //bool heroplayer;
     RaycastHit hit;
 
     void Start()

@@ -15,7 +15,8 @@ public class StatsPlayer : MonoBehaviour
     [SerializeField]
     public int atackDmg = 10;
     [SerializeField]
-    int atackSpeed = 1;
+    public int atackSpeed = 1;
+    public int Speed = 1;
 
     CombatHero combatscript;
 
@@ -31,9 +32,6 @@ public class StatsPlayer : MonoBehaviour
         if (vida<=0)
         {
             Destroy(gameObject);
-            /*combatscript.TagetEnemy = null;
-            combatscript.performattack = false;*/
-
         }
 
         /*if (vida<MaxVida)

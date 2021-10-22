@@ -6528,9 +6528,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TagetEnemy: {fileID: 0}
   heroAttack: 0
-  attackranged: 1.5
+  attackranged: 1.25
   rotatespeedattack: 0.075
-  alive: 0
+  alive: 1
   performattack: 1
 --- !u!114 &1171683181
 MonoBehaviour:
@@ -6547,7 +6547,8 @@ MonoBehaviour:
   vida: 0
   MaxVida: 100
   atackDmg: 10
-  atackSpeed: 1
+  atackSpeed: 2
+  Speed: 1
 --- !u!1 &1179111312
 GameObject:
   m_ObjectHideFlags: 0
@@ -12755,9 +12756,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4882590742245186}
   - component: {fileID: 95528396047221020}
-  - component: {fileID: 1837317834769786}
   - component: {fileID: 1837317834769785}
   - component: {fileID: 1837317834769787}
+  - component: {fileID: 1837317834769786}
   m_Layer: 0
   m_Name: TurtleShell
   m_TagString: Enemy
@@ -12789,8 +12790,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.64, y: 2.64, z: 1.4}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.5618968, y: 1.6641881, z: 1.6178058}
+  m_Center: {x: -0.00000005278142, y: 0.08728197, z: 0.45835787}
 --- !u!114 &1837317834769787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12807,6 +12808,7 @@ MonoBehaviour:
   MaxVida: 100
   atackDmg: 0
   atackSpeed: 0
+  Speed: 1
 --- !u!1 &1914324792089596
 GameObject:
   m_ObjectHideFlags: 0
