@@ -10,7 +10,7 @@ public class StatsPlayer : MonoBehaviour
     //Stadisticas
     [SerializeField]
     int MaxVida = 100;
-    float healthRegen = 0.1f;
+    //float healthRegen = 0.1f;
     int defensa = 0;
     [SerializeField]
     public int atackDmg = 10;

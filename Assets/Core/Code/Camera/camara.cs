@@ -11,6 +11,7 @@ public class camara : MonoBehaviour
     public float smothe = 0.5f;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         camerapos = transform.position - player.transform.position;
     }
 
